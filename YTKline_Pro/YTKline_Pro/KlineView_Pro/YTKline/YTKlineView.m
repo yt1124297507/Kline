@@ -95,6 +95,11 @@
 - (void)drawRect:(CGRect)rect{
     [self draw_H_V_lines];
 }
+
+- (void)layoutSubviews{
+    
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -104,29 +109,6 @@
     }
     return self;
 }
-- (instancetype)initWithFrame_Full:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.isFull = YES;
-        [self addSubViews];
-        [self setUp];
-    }
-    return self;
-}
-- (instancetype)initWithFrame_Guess:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.isGuess = YES;
-        [self addSubViews];
-        [self setUp];
-    }
-    return self;
-}
-
-
-
 
 -(void)setUp{
     self.KlineCandleWid = 4;
@@ -863,7 +845,7 @@
         
     }
     self.arrNeedDrawModels = arrReulst;
-    NSLog(@"当前徐绘制的index --%ld",[self.arrNeedDrawModels.firstObject index]);
+//    NSLog(@"当前徐绘制的index --%ld",[self.arrNeedDrawModels.firstObject index]);
     return arrReulst;
 }
 
@@ -875,11 +857,12 @@
         CGFloat wid = 60;
         YTKlineModel *lastModel = _arrModels.lastObject;
         if (lastModel) {
-            wid = [KlineHelper getTxtWid:lastModel.close font:[KlineHelper RightTxtFont]]+20;;
+            wid = [KlineHelper getTxtWid:lastModel.close font:[KlineHelper RightTxtFont]]+10;;
             if (wid<60) {
                 wid = 60;
             }
         }
+        wid = (int)wid/10*10+10;
         _rightNewPriceWid = wid;
         
     }
@@ -1079,7 +1062,7 @@
 
 - (void)setArrNeedDrawModels:(NSMutableArray *)arrNeedDrawModels{
     _arrNeedDrawModels = arrNeedDrawModels;
-    NSLog(@"又在重新绘制了哇 ！！！");
+
     self.kline_Candle.arrNeedDrawModels = arrNeedDrawModels;
     self.kline_Vol.arrNeedDrawModels = arrNeedDrawModels;
     self.kline_Macd.arrNeedDrawModels = arrNeedDrawModels;
@@ -1146,7 +1129,6 @@
     if (!_tipBoard) {
         _tipBoard = [KlineView_TipBoard new];
         __block __weak typeof(self) weakSelf =  self;;
-        _tipBoard.isGuess = _isGuess;
         _tipBoard.singleTapBlock = ^{
             weakSelf.currentSelectKlineModel = nil;
             [weakSelf clearDetailViews];

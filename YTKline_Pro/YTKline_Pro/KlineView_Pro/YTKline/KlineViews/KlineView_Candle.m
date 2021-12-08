@@ -126,7 +126,7 @@
     double max = _MaxMinRect.size.width;
     double min = _MaxMinRect.size.height;
     double unit = (max-min)/(maxY-minY);;
-    if (unit==0) {
+    if ((max-min)==0) {
         unit=1;
     }
     
@@ -368,6 +368,7 @@
     CGFloat minY = YT_Kline_Candle_MinY;
     CGFloat maxY = self.drawCandleView.frame.size.height - YT_Kline_Candle_TopY;
     double unit = (max-min)/(maxY-minY);
+    
     if (unit == 0) {
         unit = 1;
     }

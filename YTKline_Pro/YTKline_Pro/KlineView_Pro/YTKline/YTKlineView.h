@@ -34,18 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy) void(^loadMoreBlock) (YTKlineModel * firstModel);
 
-
 /// 是否是分时图
 /// @param isOneMinute isOneMinute description
 -(void)setCurrentIsOneMinuteModel:(BOOL)isOneMinute;
-
 
 //重绘
 -(void)reDrawAll;
 
 /// 清空绘制数据
 -(void)clearAllDatas;
-
 
 /// 接口返回的data
 /// @param data data description
@@ -55,13 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param model model description
 -(void)getedOneSocketData:(YTKlineModel *)model;
 
-
 /// 加载更多data
 /// @param data data description
 -(void)getedMoreKlineData:(NSArray <YTKlineModel *>*)data;
 
-- (instancetype)initWithFrame_Full:(CGRect)frame;
-- (instancetype)initWithFrame_Guess:(CGRect)frame;
 @end
 
 NS_ASSUME_NONNULL_END

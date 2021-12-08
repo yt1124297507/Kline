@@ -43,9 +43,7 @@
     CGFloat tipBoarWid = [self leftLabelWid] + [self rightLabelWid] + [self LeftRightSpacing] + [self LeftRightInset] * 2;
     
     NSInteger count = 8;
-    if (_isGuess) {
-        count = 7;
-    }
+
     
     
     CGFloat tipBoarHeight = [self TopBottomInset] * 2 + [self TopBottomSpacing] * (count-1);
@@ -112,28 +110,16 @@
 }
 
 -(NSArray *)arrLeft{
-    if (_isGuess) {
-        return @[
-            (@"时间"),
-            (@"开"),
-            (@"高o"),
-            (@"低o"),
-            (@"收"),
-            (@"涨跌额"),
-            (@"涨跌幅")
-        ];
-    }else{
-        return @[
-            (@"时间"),
-            (@"开"),
-            (@"高o"),
-            (@"低o"),
-            (@"收"),
-            (@"涨跌额"),
-            (@"涨跌幅"),
-            (@"成交量")
-        ];
-    }
+    return @[
+        (@"时间"),
+        (@"开"),
+        (@"高"),
+        (@"低"),
+        (@"收"),
+        (@"涨跌额"),
+        (@"涨跌幅"),
+        (@"成交量")
+    ];
 }
 
 -(NSArray *)arrRightHeight:(YTKlineModel *)model{
@@ -141,7 +127,7 @@
     NSMutableArray *arrResult = @[].mutableCopy;;
     
     for (NSString *string in arrRight) {
-        CGFloat height = [KlineHelper getTxtWid:string font:[UIFont systemFontOfSize:10]];
+        CGFloat height = 20;//[KlineHelper getTxtWid:string font:[UIFont systemFontOfSize:10]]
         if (height < [self heightOfEvery]) {
             height = [self heightOfEvery];
         }

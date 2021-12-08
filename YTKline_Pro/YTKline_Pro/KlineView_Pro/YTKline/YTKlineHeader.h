@@ -21,9 +21,6 @@
 //缩放手势最小值
 #define YT_Kline_PichScaleMin 0.1
 
-//K线右侧显示价格等的空隙
-//#define YT_Kline_RightSpacing 150
-
 //蜡烛图底部间距
 #define YT_Kline_Candle_MinY 4
 
@@ -36,7 +33,6 @@
 #import "YYModel.h"
 #import "CAShapeLayer+Candle.h"
 #endif /* YTKlineHeader_h */
-
 
 typedef NS_ENUM(NSInteger, Y_StockChartType) {//蜡烛图线类型
     Y_StockChartType_None = 0,

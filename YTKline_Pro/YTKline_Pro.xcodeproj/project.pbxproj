@@ -17,7 +17,6 @@
 		E2732C172760815500210B48 /* YTKline_ProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C162760815500210B48 /* YTKline_ProTests.m */; };
 		E2732C222760815500210B48 /* YTKline_ProUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C212760815500210B48 /* YTKline_ProUITests.m */; };
 		E2732C702760816F00210B48 /* YTKlineView_Control.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C322760816E00210B48 /* YTKlineView_Control.m */; };
-		E2732C7F2760816F00210B48 /* YTKlineTimesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C492760816E00210B48 /* YTKlineTimesModel.m */; };
 		E2732C802760816F00210B48 /* CAShapeLayer+Candle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C4D2760816E00210B48 /* CAShapeLayer+Candle.m */; };
 		E2732C812760816F00210B48 /* KlineView_KDJ.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C532760816E00210B48 /* KlineView_KDJ.m */; };
 		E2732C822760816F00210B48 /* KlineView_Vol.m in Sources */ = {isa = PBXBuildFile; fileRef = E2732C542760816E00210B48 /* KlineView_Vol.m */; };
@@ -88,8 +87,6 @@
 		E2732C212760815500210B48 /* YTKline_ProUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTKline_ProUITests.m; sourceTree = "<group>"; };
 		E2732C232760815500210B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2732C322760816E00210B48 /* YTKlineView_Control.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKlineView_Control.m; sourceTree = "<group>"; };
-		E2732C492760816E00210B48 /* YTKlineTimesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKlineTimesModel.m; sourceTree = "<group>"; };
-		E2732C4A2760816E00210B48 /* YTKlineTimesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKlineTimesModel.h; sourceTree = "<group>"; };
 		E2732C4D2760816E00210B48 /* CAShapeLayer+Candle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Candle.m"; sourceTree = "<group>"; };
 		E2732C4E2760816E00210B48 /* CAShapeLayer+Candle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+Candle.h"; sourceTree = "<group>"; };
 		E2732C4F2760816E00210B48 /* YTKlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKlineView.h; sourceTree = "<group>"; };
@@ -185,9 +182,6 @@
 		E2732BEE2760815000210B48 = {
 			isa = PBXGroup;
 			children = (
-				E2732CC12760A91000210B48 /* KlineData_More.json */,
-				E2732CC22760A91000210B48 /* KlineData_Socket.json */,
-				E2732CC32760A91000210B48 /* KlineData.json */,
 				E2732BF92760815100210B48 /* YTKline_Pro */,
 				E2732C152760815500210B48 /* YTKline_ProTests */,
 				E2732C202760815500210B48 /* YTKline_ProUITests */,
@@ -208,6 +202,9 @@
 		E2732BF92760815100210B48 /* YTKline_Pro */ = {
 			isa = PBXGroup;
 			children = (
+				E2732CC12760A91000210B48 /* KlineData_More.json */,
+				E2732CC22760A91000210B48 /* KlineData_Socket.json */,
+				E2732CC32760A91000210B48 /* KlineData.json */,
 				E2732CB92760845200210B48 /* YYModel */,
 				E2732C902760823500210B48 /* Masonry */,
 				E2732C2F2760816E00210B48 /* KlineView_Pro */,
@@ -247,7 +244,6 @@
 		E2732C2F2760816E00210B48 /* KlineView_Pro */ = {
 			isa = PBXGroup;
 			children = (
-				E2732C482760816E00210B48 /* Model */,
 				E2732C4B2760816E00210B48 /* YTKline */,
 				E2732C6F2760816E00210B48 /* YTKlineView_Control.h */,
 				E2732C322760816E00210B48 /* YTKlineView_Control.m */,
@@ -255,23 +251,14 @@
 			path = KlineView_Pro;
 			sourceTree = "<group>";
 		};
-		E2732C482760816E00210B48 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E2732C492760816E00210B48 /* YTKlineTimesModel.m */,
-				E2732C4A2760816E00210B48 /* YTKlineTimesModel.h */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E2732C4B2760816E00210B48 /* YTKline */ = {
 			isa = PBXGroup;
 			children = (
+				E2732C652760816E00210B48 /* YTKlineModel */,
 				E2732C4C2760816E00210B48 /* Category */,
 				E2732C6A2760816E00210B48 /* KlineHelper */,
 				E2732C502760816E00210B48 /* KlineViews */,
 				E2732C692760816E00210B48 /* YTKlineHeader.h */,
-				E2732C652760816E00210B48 /* YTKlineModel */,
 				E2732C4F2760816E00210B48 /* YTKlineView.h */,
 				E2732C682760816E00210B48 /* YTKlineView.m */,
 			);
@@ -290,26 +277,26 @@
 		E2732C502760816E00210B48 /* KlineViews */ = {
 			isa = PBXGroup;
 			children = (
-				E2732C512760816E00210B48 /* KlineView_WR.h */,
-				E2732C522760816E00210B48 /* KlineView_RightView.h */,
-				E2732C532760816E00210B48 /* KlineView_KDJ.m */,
-				E2732C542760816E00210B48 /* KlineView_Vol.m */,
-				E2732C552760816E00210B48 /* KlineView_MACD.m */,
-				E2732C562760816E00210B48 /* KlineView_TipBoard.h */,
-				E2732C572760816E00210B48 /* KlineView_RSI.h */,
-				E2732C582760816E00210B48 /* KlineView_Time.m */,
 				E2732C592760816E00210B48 /* KlineView_Candle.h */,
-				E2732C5A2760816E00210B48 /* KlineView_TopView.m */,
+				E2732C632760816E00210B48 /* KlineView_Candle.m */,
 				E2732C5B2760816E00210B48 /* KlineView_KDJ.h */,
-				E2732C5C2760816E00210B48 /* KlineView_RightView.m */,
-				E2732C5D2760816E00210B48 /* KlineView_WR.m */,
+				E2732C532760816E00210B48 /* KlineView_KDJ.m */,
 				E2732C5E2760816E00210B48 /* KlineView_MACD.h */,
-				E2732C5F2760816E00210B48 /* KlineView_Vol.h */,
+				E2732C552760816E00210B48 /* KlineView_MACD.m */,
+				E2732C522760816E00210B48 /* KlineView_RightView.h */,
+				E2732C5C2760816E00210B48 /* KlineView_RightView.m */,
+				E2732C572760816E00210B48 /* KlineView_RSI.h */,
 				E2732C602760816E00210B48 /* KlineView_RSI.m */,
+				E2732C642760816E00210B48 /* KlineView_Time.h */,
+				E2732C582760816E00210B48 /* KlineView_Time.m */,
+				E2732C562760816E00210B48 /* KlineView_TipBoard.h */,
 				E2732C612760816E00210B48 /* KlineView_TipBoard.m */,
 				E2732C622760816E00210B48 /* KlineView_TopView.h */,
-				E2732C632760816E00210B48 /* KlineView_Candle.m */,
-				E2732C642760816E00210B48 /* KlineView_Time.h */,
+				E2732C5A2760816E00210B48 /* KlineView_TopView.m */,
+				E2732C5F2760816E00210B48 /* KlineView_Vol.h */,
+				E2732C542760816E00210B48 /* KlineView_Vol.m */,
+				E2732C512760816E00210B48 /* KlineView_WR.h */,
+				E2732C5D2760816E00210B48 /* KlineView_WR.m */,
 			);
 			path = KlineViews;
 			sourceTree = "<group>";
@@ -539,7 +526,6 @@
 				E2732CB12760823500210B48 /* MASConstraintMaker.m in Sources */,
 				E2732C842760816F00210B48 /* KlineView_Time.m in Sources */,
 				E2732CB52760823500210B48 /* MASConstraint.m in Sources */,
-				E2732C7F2760816F00210B48 /* YTKlineTimesModel.m in Sources */,
 				E2732C832760816F00210B48 /* KlineView_MACD.m in Sources */,
 				E2732CB72760823500210B48 /* MASViewAttribute.m in Sources */,
 				E2732C8B2760816F00210B48 /* YTKlineModel.m in Sources */,
