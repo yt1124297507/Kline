@@ -45,10 +45,8 @@
 
 /// 模拟断开socket
 -(void)deConnectSocket{
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(getSocketData) object:nil];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reConnectSocket) object:nil];
 }
-
-
 
 
 -(void)getSocketData{
@@ -153,6 +151,7 @@
         [_klineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.mas_offset(0);
         }];
+        
         
         __block __weak typeof(self) weakSelf =  self;;
         _klineView.loadMoreBlock = ^(YTKlineModel * _Nonnull firstModel) {
