@@ -168,6 +168,7 @@
 
 -(void)setCurrentIsOneMinuteModel:(BOOL)isOneMinute{
     self.kline_Candle.isOneMinuteModel = isOneMinute;
+    [self.kline_Candle reDraw];
 }
 /// 画线
 -(void)draw_H_V_lines{
